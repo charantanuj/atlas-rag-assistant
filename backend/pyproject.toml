@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "noise-aware-rag"
+version = "0.1.0"
+description = "Noise-aware mixed-format technical document RAG assistant"
+requires-python = ">=3.11"
+dependencies = [
+  "beautifulsoup4>=4.14,<5",
+  "chromadb>=1.3,<2",
+  "fastapi>=0.115,<1",
+  "flashrank>=0.2.10,<0.3",
+  "google-genai>=2.13,<3",
+  "langgraph>=1.0,<2",
+  "pdfplumber>=0.11,<1",
+  "pypdf>=5.1,<6",
+  "pydantic-settings>=2.6,<3",
+  "python-docx>=1.2,<2",
+  "python-pptx>=1.0,<2",
+  "python-multipart>=0.0.20,<1",
+  "sentence-transformers>=6.2,<7",
+  "uvicorn[standard]>=0.32,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx>=0.27,<1",
+  "pytest>=8.3,<9",
+  "pytest-asyncio>=0.24,<1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rag_assistant"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q --basetemp=.pytest_tmp"
+

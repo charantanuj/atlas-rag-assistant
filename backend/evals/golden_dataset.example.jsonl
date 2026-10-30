@@ -1,0 +1,3 @@
+{"id":"known-answer-example","question":"Replace with a human-verified question.","relevant_chunk_ids":["chk_verified"],"expected_citations":[{"chunk_id":"chk_verified","document_id":"doc_verified","location_type":"page","location":1}],"should_abstain":false}
+{"id":"no-answer-example","question":"Replace with a question verified to be absent from the corpus.","relevant_chunk_ids":[],"expected_citations":[],"should_abstain":true}
+
